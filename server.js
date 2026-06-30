@@ -129,5 +129,4 @@ app.post('/api/auth/verify', async (req, res) => {
         res.status(500).json({ error: 'Error al verificar' });
     }
 });
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, '0.0.0.0', () => console.log(`API corriendo en red local por el puerto ${PORT}`));
+module.exports = app;
