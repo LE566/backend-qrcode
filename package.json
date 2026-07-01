@@ -16,5 +16,8 @@
     "mongoose": "^9.7.3",
     "otpauth": "^9.5.1",
     "speakeasy": "^2.0.0"
+  },
+  "engines": {
+    "node": "22.x"
   }
 }
