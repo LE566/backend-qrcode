@@ -10,14 +10,13 @@ app.use(cors({
   methods: ['GET', 'POST', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
-app.use(cors({ origin: '*' }));
-app.options('*', cors()); // <--- ¡ESTO ES VITAL PARA EL PREFLIGHT CORS!
 app.use(express.json());
 
 // Conexión a MongoDB Atlas
-if (mongoose.connection.readyState === 0) {
-  await mongoose.connect(process.env.MONGO_URI);
-}
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('Conectado exitosamente a MongoDB Atlas'))
+    .catch(err => console.error('Error al conectar a Atlas:', err));
+
 const AuthSchema = new mongoose.Schema({
     servicio: String,
     cuenta: String,
