@@ -10,6 +10,8 @@ app.use(cors({
   methods: ['GET', 'POST', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+app.use(cors({ origin: '*' }));
+app.options('*', cors()); // <--- ¡ESTO ES VITAL PARA EL PREFLIGHT CORS!
 app.use(express.json());
 
 // Conexión a MongoDB Atlas
