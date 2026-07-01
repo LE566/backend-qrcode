@@ -6,7 +6,7 @@ const speakeasy = require('speakeasy'); // <-- Nueva librería
 
 const app = express();
 app.use(cors({
-  origin: 'https://front-end-qrcode-git-main-le566s-projects.vercel.app', // Tu URL de frontend
+  origin: '*', // Permitir desde cualquier origen para descartar bloqueos
   methods: ['GET', 'POST', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
