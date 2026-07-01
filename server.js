@@ -134,4 +134,8 @@ app.post('/api/auth/verify', async (req, res) => {
         res.status(500).json({ error: 'Error al verificar' });
     }
 });
-module.exports = app;
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Servidor ejecutándose en el puerto ${PORT}`);
+});
