@@ -5,7 +5,11 @@ const cors = require('cors');
 const speakeasy = require('speakeasy'); // <-- Nueva librería
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://front-end-qrcode-git-main-le566s-projects.vercel.app', // Tu URL de frontend
+  methods: ['GET', 'POST', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // Conexión a MongoDB Atlas
